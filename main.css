@@ -1,3 +1,6 @@
+/* DIEGO VELASCO - main.css */
+
+/* Page styling. */
 html,
 body {
   height: 100%;
@@ -15,6 +18,7 @@ body {
   flex-direction: column;
 }
 
+/* Header Stlying. */
 .header {
   text-align: center;
   padding: 20px 0;
@@ -28,6 +32,7 @@ body {
   font-size: 1rem;
 }
 
+/* Slideshow styling. */
 .slideshow {
   flex: 1;
   background-color: #333;
@@ -35,6 +40,7 @@ body {
   overflow: hidden;
 }
 
+/* Individual slide styling. "Transition" is the fade effect. */
 .slide {
   position: absolute;
   top: 0;

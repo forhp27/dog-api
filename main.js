@@ -1,6 +1,10 @@
+// DIEGO VELASCO - main.js
+
+// Declared Variables.
 let timer;
 let deleteFirstPhotoDelay;
 
+// Pulls the dog breed data from the API.
 async function start() {
   try {
     const response = await fetch("https://dog.ceo/api/breeds/list/all");
@@ -13,6 +17,7 @@ async function start() {
 
 start();
 
+// Creates the drop-down menu of dog breed options.
 function createBreedList(breedList) {
   document.getElementById("breed").innerHTML = `
     <select onchange="loadByBreed(this.value)">
@@ -26,6 +31,7 @@ function createBreedList(breedList) {
   `;
 }
 
+// Pulls the seleceted dog breed data from the API.
 async function loadByBreed(breed) {
   if (breed != "Choose a Dog Breed!") {
     const response = await fetch(`https://dog.ceo/api/breed/${breed}/images`);
@@ -34,6 +40,7 @@ async function loadByBreed(breed) {
   }
 }
 
+// Creates the slideshow of dog images. This contains two (2) edge cases. This is used at the end of the function loadByBreed().
 function createSlideshow(images) {
   let currentPosition = 0;
   clearInterval(timer);
@@ -54,6 +61,7 @@ function createSlideshow(images) {
   `;
   }
 
+  // Moves to the next slide in the slideshow. This function is used in createSlideshow().
   function nextSlide() {
     document
       .getElementById("slideshow")
